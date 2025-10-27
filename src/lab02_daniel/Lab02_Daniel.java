@@ -7,6 +7,7 @@ package lab02_daniel;
 
 import java.util.HashSet;
 import java.util.Set;
+import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -101,7 +102,7 @@ public class Lab02_Daniel extends Application{
         });
         //Button functionality
         interactButton.setOnAction(e -> {
-            if (interactButton.getText().equals("PLAY")) {
+            if (!transition.getStatus().equals(Animation.Status.RUNNING)) {
                 transition.play();
                 interactButton.setText("PAUSE");
             } else {
